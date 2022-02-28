@@ -1,0 +1,78 @@
+﻿@model GOT.Models.OdznakaResultView
+@using static GOT.Models.Odznaka
+
+@{
+    ViewData["Title"] = "Details";
+}
+<head>
+    <link rel="stylesheet" href="~/css/odznaki_details.css"/>
+</head>
+
+<div class="container bootdey">
+    <div class="d-flex justify-content-center">
+        <div class="row">
+            <div class="col">
+                <div class="user-widget-2">
+                    <ul class="list-unstyled">
+                        <li class="media">
+                            <i class="fas @Odznaka.stopien[@Model.Odznaka.Stopien] fa-award d-flex align-self-center"></i>
+                            <div class="media-body">
+                                <h5>@Odznaka.rodzaj[@Model.Odznaka.Rodzaj] @Odznaka.stopienPl[@Model.Odznaka.Stopien]</h5>
+                                <p class="inf-text">Wymagane Punkty: @Model.Odznaka.WymaganePunkty</p>
+                                @if (@Model.Odznaka.DataZdobycia != null)
+                                {
+                                    <p class="inf-text">Satus: Zdobyta @Html.DisplayFor(Model => Model.Odznaka.DataZdobycia)</p>
+                                }
+                                else
+                                {
+                                    <p class="inf-text">Satus: W trakcie</p>
+                                }
+                               
+                                <p class="inf-text">Punkty na następny stopień: @Model.PunktyNaNastepnyStopien</p>
+                                <p class="inf-text d-inline-block">Postęp: </p>
+                                <div class="progress">
+                                    @{
+                                        int punktyPrzeniesione = @Model.Odznaka.PunktyPrzeniesione == null ? 0 : @Model.Odznaka.PunktyPrzeniesione.Value;  
+                                        int passPercentage = (@Model.Punkty + punktyPrzeniesione)/@Model.Odznaka.WymaganePunkty*100;
+                                    }
+                                    <div class="progress-bar d-inline-block" role="progressbar" style="width: @passPercentage%;" aria-valuenow="@Model.Odznaka.WymaganePunkty" aria-valuemin="0" aria-valuemax="@Model.Odznaka.WymaganePunkty"><text style="color: black">@Model.Punkty/@Model.Odznaka.WymaganePunkty</text></div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center">
+        <div class="row">
+            <div class="col">
+                <h4>Wycieczki zaliczone do odznaki</h4>
+                <div class="table-responsive">
+                    <table class="table table-hover" id="job-table">
+                        <thead>
+                        <tr class="text-center">
+                            <th scope="col">Nazwa</th>
+                            <th scope="col">Data</th>
+                            <th scope="col">Długość</th>
+                            <th scope="col">Suma podejść</th>
+                            <th scope="col">Punkty</th>
+                        </tr>
+                        </thead>
+                        <tbody class="text-center tableBody">
+                        @foreach (var item in Model.ZgloszeniaDoOdznaki) {
+                            <tr key={key}>
+                                <td>@item.Wycieczka.Nazwa</td>
+                                <td>@item.DataOdbyciaWycieczki.ToString("dd.MM.yyyy")</td>
+                                <td>@item.Wycieczka.Dlugosc km</td>
+                                <td>@item.Wycieczka.SumaPodejsc km</td>
+                                <td>@item.Punkty</td>
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

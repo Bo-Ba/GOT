@@ -1,0 +1,42 @@
+﻿@model IEnumerable<PunktTrasy>
+
+<head>
+    <link rel="stylesheet" href="~/css/create_wycieczka.css"/>
+    <script src="~/js/createTrip.js"></script>
+</head>
+
+
+<h1>Stwórz wycieczkę</h1>
+<div class="d-flex vertical-center">
+    <div class="row">
+        <div class="column left" id="column left">
+            <div class="column header">
+                <p class="text">Podsumowanie</p>
+            </div>
+            <div id="summary"></div>
+        </div>
+        <div class="column middle">
+            <div id="map"></div>
+
+            <script async
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAinaPdMU4liQkKltoVBr0rmX3vLs-knVQ&callback=initMap">
+            </script>
+        </div>
+        <div class="column right">
+            
+            <div id="div1"></div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+    <script>
+        var pointsList = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model));
+    </script>
+    <script type="text/javascript">
+        $('#div1').load('@Url.Action("GetPartial")');
+    </script> 
+}

@@ -1,0 +1,48 @@
+﻿@model Dictionary<Wycieczka, string>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<head>
+    <link rel="stylesheet" href="~/css/choose_shared.css"/>
+</head>
+
+<div class="container">
+    <div class="container bootdey">
+        <div class="d-flex justify-content-center">
+            <div class="row">
+                <div class="col">
+                    <h1>Wybierz wycieczkę</h1>
+                    <div class="table-responsive">
+                        <table class="table table-hover" id="job-table">
+                            <thead>
+                            <tr class="text-center">
+                                <th scope="col">Nazwa</th>
+                                <th scope="col">Punkt startowy</th>
+                                <th scope="col">Punkt końcowy</th>
+                                <th scope="col">Długość</th>
+                                <th scope="col">Suma podejść</th>
+                                <th scope="col">Punkty</th>
+                            </tr>
+                            </thead>
+                            <tbody class="text-center tableBody">
+                            @foreach (var item in Model)
+                            {
+                                <tr key={key}>  
+                                    <td>@item.Key.Nazwa</td>
+                                    <td>Jugów</td>
+                                    <td>Kamienica</td>
+                                    <td>@item.Key.Dlugosc</td>
+                                    <td>@item.Key.SumaPodejsc</td>
+                                    <td>@item.Value</td>
+                                </tr>
+                            }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,6 +1,16 @@
-﻿@{
-    ViewData["Title"] = "Privacy Policy";
-}
-<h1>@ViewData["Title"]</h1>
+﻿<head>
+    <title>Simple Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" href="~/css/privacy.css"/>
+    <script src="~/js/Map.js"></script>
+</head>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<!DOCTYPE html>
+<div class="container">
+    <div id="map"></div>
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAinaPdMU4liQkKltoVBr0rmX3vLs-knVQ&callback=initMap&v=weekly"
+        async defer>
+    </script>
+</div>

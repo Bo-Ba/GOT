@@ -1,0 +1,32 @@
+﻿
+.vertical-center {
+    z-index: 2;
+    min-height: 80vh;
+    align-items: center;
+    width: auto;
+    justify-content: center;
+    position: relative;
+}
+
+.myFluid {
+    background-color: rgb(219, 219, 219);
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    position: fixed;
+    height: 90.5%;
+    width: 98.3%;
+}
+
+h1 {
+    margin-bottom: 30px;
+}
+
+.myButton {
+    width: 15rem;
+}
+
+

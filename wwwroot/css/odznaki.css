@@ -1,0 +1,50 @@
+﻿.bootdey { margin-top: 50px }
+
+.user-widget-2 .media { margin-bottom: 20px; }
+
+.user-widget-2 h5 {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 3px;
+}
+
+.fas {
+    font-size: 6.5rem;
+    margin-bottom: 20px;
+}
+
+.popularna {
+    color: rgb(33, 128, 6)
+}
+
+.brazowa {
+    color: rgb(139, 69, 19)
+}
+
+.srebrna {
+    color: rgb(192, 192, 192)
+}
+
+.zlota {
+    color: rgb(255, 215, 0)
+}
+
+.user-widget-2 i {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.user-widget-2 .media .media-body { margin-bottom: 20px; }
+
+.user-widget-2 .media .inf-text { margin-bottom: 0.1rem; }
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}

@@ -15,6 +15,7 @@ namespace GOT.Models
 
         [Required]
         [Column(TypeName = "datetime")]
+        [DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}")]
         public DateTime DataUtworzeznia { get; set; }
 
         [Required]
@@ -27,10 +28,17 @@ namespace GOT.Models
 
         [Required]
         public int AutorID { get; set; }
+        [Required]
+        public decimal Dlugosc { get; set; }
+        [Required]
+        public decimal SumaPodejsc { get; set; }
 
         [ForeignKey("AutorID")]
         public Uzytkownik Autor { get; set; }
 
         public List<Trasa> Trasy { get; set; }
+
+        public List<ZgloszenieWycieczki> Zgloszenia { get; set; }
+
     }
 }

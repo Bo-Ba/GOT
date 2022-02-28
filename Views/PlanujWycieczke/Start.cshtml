@@ -1,0 +1,20 @@
+﻿<head>
+    <link rel="stylesheet" href="~/css/wycieczka_start.css"/>
+</head>
+
+<!DOCTYPE html>
+<div class="container-fluid myFluid">
+</div>
+<div class="d-flex vertical-center">
+    <div class="container text-center">
+        <h1>Wybierz opcję z której chcesz skorzystać</h1>
+        <div class="row justify-content-center">
+            <div class="col-sm-4">
+                <a type="button" class="btn btn-success myButton" asp-action="CreateTrip" asp-controller="PlanujWycieczke">Planuj samemu</a>
+            </div>
+            <div class="col-sm-4">
+                <a type="button" class="btn btn-success myButton" asp-action="ChooseShared" asp-controller="PlanujWycieczke">Skorzystaj z udostępnionych</a>
+            </div>
+        </div>
+    </div>
+</div>

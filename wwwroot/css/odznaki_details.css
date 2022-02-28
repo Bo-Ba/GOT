@@ -1,0 +1,54 @@
+﻿.user-widget-2 .media { margin-bottom: 20px; }
+
+.user-widget-2 h5 {
+    font-size: 5rem;
+    font-weight: 300;
+    margin-bottom: 3px;
+}
+
+.fas { font-size: 13rem; }
+
+.popularna { color: rgb(33, 128, 6) }
+
+.brazowa { color: rgb(139, 69, 19) }
+
+.srebrna { color: rgb(192, 192, 192) }
+
+.zlota { color: rgb(255, 215, 0) }
+
+.user-widget-2 i { margin-right: 40px; }
+
+.user-widget-2 .media .media-body { margin-bottom: 20px; }
+
+.user-widget-2 .media .inf-text {
+    margin-bottom: 0.1rem;
+    font-size: 1.3rem;
+    font-weight: 200;
+}
+
+.progress  {
+    width: 35rem;
+    height: auto;
+}
+
+.progress-bar { background: -webkit-linear-gradient(left, #E5E51A 0%, #1AE521 100%); }
+
+.bootdey h4 {
+    font-size: 2rem;
+    margin-bottom: 3px;
+    font-weight: 200;
+}
+
+.table-responsive {
+    height: 30rem;
+    width: 63rem;
+    overflow-y: scroll;
+}
+
+thead tr:nth-child(1) th {
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border: none;
+}

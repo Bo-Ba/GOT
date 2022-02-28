@@ -1,0 +1,45 @@
+﻿@model IEnumerable<GOT.Models.Odznaka>
+@using static GOT.Models.Odznaka
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Twoje odznaki</h1>
+
+<head>
+    <link rel="stylesheet" href="~/css/odznaki.css" />
+</head>
+<!DOCTYPE html>
+<div class="container bootdey">
+    <div class="d-flex justify-content-center" >
+        <div class="row">
+            <div class="col">
+                <div class="user-widget-2">
+                    <ul class="list-unstyled">
+                        @foreach (var item in Model) {
+                            <a asp-action="Details" asp-Route-id="@item.ID"> 
+                                <li class="media">
+                                    <i class="fas @Odznaka.stopien[@item.Stopien] fa-award d-flex align-self-center"></i>
+                                    <div class="media-body">
+                                        <h5>@Odznaka.rodzaj[@item.Rodzaj] @Odznaka.stopienPl[@item.Stopien]</h5>
+                                        <p class="inf-text">Wymagane Punkty: @item.WymaganePunkty</p>
+                                        @if (@item.DataZdobycia != null)
+                                        {
+                                            <p class="inf-text">Satus: Zdobyta @Html.DisplayFor(m => @item.DataZdobycia)</p>
+                                        }
+                                        else
+                                        {
+                                            <p class="inf-text">Satus: W trakcie</p>
+                                        }
+                                        <p class="inf-text">Punkty z poprzedniego stopnia: @item.PunktyPrzeniesione</p>
+                                    </div>
+                                </li>
+                            </a>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
